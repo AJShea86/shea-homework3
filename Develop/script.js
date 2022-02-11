@@ -31,28 +31,42 @@ while (upper === false && lower === false && num === false && special === false)
   num = window.confirm("Would you like to include numbers?");
   special = window.confirm("Would you like to include special characters?");
 }
-console.log(upper);
 
   if (upper === true) {
-    var upperPos = Math.floor(Math.random() * upperCase.length) // gives a number between 0 and 26
-    var upperLet = upperCase[upperPos] //upperCase [7]
+    var upperPos = Math.floor(Math.random() * upperCase.length); // gives a number between 0 and 26
+    var upperLet = upperCase[upperPos]; //upperCase [7]
+    password = password + upperLet;
   }
     
 
   if (lower === true){
-
+    var lowerPos = Math.floor(Math.random() * lowerCase.length);  
+    var lowerLet = lowerCase[lowerPos];                              
+    password = password + lowerLet;
   }
 
 
   if (num === true){
-
+    var numPos = Math.floor(Math.random() * numbers.length); 
+    var numLet = numbers[numPos]; 
+    password = password + numLet;
   }
 
 
   if (special === true){
+    var specialPos = Math.floor(Math.random() * specialChar.length); 
+    var specialLet = specialChar[specialPos]; 
+    password = password + specialLet;
+  } 
 
-  }
+  
+
 }
+  console.log(password);
+
+}
+
+
 
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
